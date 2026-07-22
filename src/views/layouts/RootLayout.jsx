@@ -1,16 +1,18 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import { useRootLayoutViewModel } from '../../viewmodels/useRootLayoutViewModel.js'
 
 export default function RootLayout() {
+  const { navItems } = useRootLayoutViewModel()
+
   return (
     <>
       <header className="site-nav">
-        <NavLink to="/" end className="brand">
-          Daniel Brunvoll
-        </NavLink>
         <nav>
-          <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          {navItems.map((item) => (
+            <NavLink key={item.id} to={item.to} end={item.end}>
+              {item.label}
+            </NavLink>
+          ))}
         </nav>
       </header>
       <main className="site-main">
