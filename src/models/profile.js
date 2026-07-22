@@ -18,6 +18,7 @@ const profile = {
 
 /** @type {NavItem[]} */
 const navItems = [
+  { id: 'home', label: 'Home', to: '/', end: true },
   { id: 'projects', label: 'Projects', to: '/projects' },
   { id: 'about', label: 'About me', to: '/about' },
   { id: 'contact', label: 'Contact', to: '/contact' },
