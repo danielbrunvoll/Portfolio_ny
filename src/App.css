@@ -1,3 +1,37 @@
-#portfolio {
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-nav .brand {
+  font-weight: 500;
+  color: var(--text-h);
+  text-decoration: none;
+}
+
+.site-nav nav {
+  display: flex;
+  gap: 20px;
+}
+
+.site-nav nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-nav nav a.active,
+.site-nav nav a:hover {
+  color: var(--text-h);
+}
+
+.site-main {
   flex-grow: 1;
+}
+
+.page {
+  padding: 32px 24px;
+  text-align: left;
 }
