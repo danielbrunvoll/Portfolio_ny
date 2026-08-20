@@ -21,20 +21,32 @@ export default function ProjectDetailPage() {
       </Link>
       <h1>{project.title}</h1>
       <p className="project-summary">{project.summary}</p>
-      {project.body ? <p className="project-body">{project.body}</p> : null}
 
-      {project.gallery.length === 0 ? null : (
-        <ul className="project-gallery">
-          {project.gallery.map((image) => (
-            <li key={image.src}>
-              <figure>
-                <img src={image.src} alt={image.caption} loading="lazy" />
-                <figcaption>{image.caption}</figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
-      )}
+      {project.sections.map((section, index) => (
+        <div
+          key={section.text || section.images[0]?.src || index}
+          className={`project-section project-section-${section.layout}${
+            section.images.length === 0 ? ' project-section-text-only' : ''
+          }`}
+        >
+          {section.text ? (
+            <div className="project-section-text">
+              <p>{section.text}</p>
+            </div>
+          ) : null}
+
+          {section.images.length === 0 ? null : (
+            <div className="project-section-media">
+              {section.images.map((image) => (
+                <figure key={image.src}>
+                  <img src={image.src} alt={image.caption} loading="lazy" />
+                  <figcaption>{image.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
     </section>
   )
 }

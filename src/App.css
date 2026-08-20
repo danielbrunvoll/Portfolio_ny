@@ -207,35 +207,79 @@
   color: var(--text-h);
 }
 
-.project-body {
-  margin-top: 20px;
+.project-section {
+  margin-top: clamp(40px, 6vw, 72px);
+  display: grid;
+  gap: clamp(20px, 3vw, 40px);
+  align-items: center;
+}
+
+/* Image beside the text, alternating side so the page reads with a rhythm
+   instead of one long column. */
+.project-section-side {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+}
+
+.project-section-side:nth-of-type(even) .project-section-media {
+  order: -1;
+}
+
+/* Wide images get the full column, with the text above them. */
+.project-section-full,
+.project-section-text-only {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.project-section-text p {
   line-height: 1.7;
 }
 
-.project-gallery {
-  list-style: none;
-  margin: clamp(40px, 6vw, 64px) 0 0;
-  padding: 0;
+.project-section-media {
   display: flex;
-  flex-direction: column;
-  gap: clamp(32px, 5vw, 56px);
+  flex-wrap: wrap;
+  gap: clamp(16px, 2.5vw, 28px);
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.project-gallery figure {
+/* `display: table` makes the figure shrink-wrap to its image, so a long caption
+   cannot stretch it and force neighbouring figures onto the next row. */
+.project-section-media figure {
   margin: 0;
+  display: table;
+  max-width: 100%;
 }
 
-.project-gallery img {
-  width: 100%;
+/* Capping the height keeps tall phone screenshots from rendering many hundreds
+   of pixels high when the column is wide. */
+.project-section-media img {
+  max-width: 100%;
+  max-height: min(72vh, 620px);
+  width: auto;
   height: auto;
   display: block;
+  margin-inline: auto;
   background: var(--accent-bg);
 }
 
-.project-gallery figcaption {
-  margin-top: 10px;
+.project-section-media figcaption {
+  display: table-caption;
+  caption-side: bottom;
+  padding-top: 10px;
   font-size: 15px;
+  line-height: 1.5;
   color: var(--text);
+}
+
+@media (max-width: 760px) {
+  .project-section-side {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Stacked, the image always follows the text it illustrates. */
+  .project-section-side:nth-of-type(even) .project-section-media {
+    order: 0;
+  }
 }
 
 .home-projects {

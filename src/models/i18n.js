@@ -45,7 +45,7 @@ const dictionaries = {
       message: 'Message',
       send: 'Send',
       sending: 'Sending…',
-      sent: 'Thanks — message received.',
+      sent: 'Thanks, message received.',
       error: 'Something went wrong.',
     },
     projectDetail: {
@@ -87,7 +87,7 @@ const dictionaries = {
       message: 'Melding',
       send: 'Send',
       sending: 'Sender…',
-      sent: 'Takk — meldingen er mottatt.',
+      sent: 'Takk, meldingen er mottatt.',
       error: 'Noe gikk galt.',
     },
     projectDetail: {
