@@ -21,7 +21,13 @@ const dictionaries = {
       contact: 'Contact',
     },
     language: { selector: 'Language' },
-    home: { role: 'UX Designer' },
+    home: {
+      role: 'UX Designer',
+      intro:
+        'I design digital products with a focus on making them simple, clear and pleasant to use. I work from the first rough sketches all the way through to the finished interface.',
+      photoAlt: 'Portrait of Daniel Brunvoll',
+      photoPlaceholder: 'PHOTO',
+    },
     projects: { title: 'Projects', empty: 'No projects yet.' },
     about: { title: 'About' },
     contact: {
@@ -49,7 +55,13 @@ const dictionaries = {
       contact: 'Kontakt',
     },
     language: { selector: 'Språk' },
-    home: { role: 'UX-designer' },
+    home: {
+      role: 'UX-designer',
+      intro:
+        'Jeg designer digitale produkter med fokus på å gjøre dem enkle, tydelige og gode å bruke. Jeg jobber fra de første skissene helt fram til ferdig grensesnitt.',
+      photoAlt: 'Portrett av Daniel Brunvoll',
+      photoPlaceholder: 'FOTO',
+    },
     projects: { title: 'Prosjekter', empty: 'Ingen prosjekter ennå.' },
     about: { title: 'Om meg' },
     contact: {

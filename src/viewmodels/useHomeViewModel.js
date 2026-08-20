@@ -1,4 +1,4 @@
-﻿import { useLanguage } from '../context/languageStore.js'
+import { useLanguage } from '../context/languageStore.js'
 import { getProfile } from '../models/profile.js'
 import {
   getAllProjects,
@@ -7,7 +7,15 @@ import {
 
 export function useHomeViewModel() {
   const { t } = useLanguage()
-  const { name } = getProfile()
+  const { name, portrait } = getProfile()
   const featured = sortProjectsByYearDesc(getAllProjects()).slice(0, 3)
-  return { headingLines: [name, t.home.role], featured }
+
+  return {
+    headingLines: [name, t.home.role],
+    intro: t.home.intro,
+    portrait,
+    portraitAlt: t.home.photoAlt,
+    portraitPlaceholder: t.home.photoPlaceholder,
+    featured,
+  }
 }

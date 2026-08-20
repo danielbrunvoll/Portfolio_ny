@@ -6,11 +6,13 @@
  *
  * @typedef {Object} Profile
  * @property {string} name
+ * @property {string | null} portrait Path to the portrait in /public, or null to show a placeholder.
  */
 
 /** @type {Profile} */
 const profile = {
   name: 'Daniel Brunvoll',
+  portrait: null,
 }
 
 /** @type {NavItem[]} */
