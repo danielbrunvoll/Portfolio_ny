@@ -1,3 +1,5 @@
+import portrait from '../assets/danielbilde.jpg'
+
 /**
  * @typedef {Object} NavItem
  * @property {string} id
@@ -6,13 +8,13 @@
  *
  * @typedef {Object} Profile
  * @property {string} name
- * @property {string | null} portrait Path to the portrait in /public, or null to show a placeholder.
+ * @property {string | null} portrait Imported from src/assets; null shows a placeholder instead.
  */
 
 /** @type {Profile} */
 const profile = {
   name: 'Daniel Brunvoll',
-  portrait: null,
+  portrait,
 }
 
 /** @type {NavItem[]} */
