@@ -10,8 +10,46 @@
  * @property {{ label: string, href: string }[]} [links]
  */
 
+// PLACEHOLDER DATA — replace these with your real projects.
+// Emptying this array (`const projects = []`) falls back to the "No projects yet" message.
 /** @type {Project[]} */
-const projects = []
+const projects = [
+  {
+    id: '1',
+    slug: 'project-one',
+    title: 'Project one',
+    summary: 'Short description of what this project was about.',
+    year: 2026,
+  },
+  {
+    id: '2',
+    slug: 'project-two',
+    title: 'Project two',
+    summary: 'Short description of what this project was about.',
+    year: 2025,
+  },
+  {
+    id: '3',
+    slug: 'project-three',
+    title: 'Project three',
+    summary: 'Short description of what this project was about.',
+    year: 2024,
+  },
+  {
+    id: '4',
+    slug: 'project-four',
+    title: 'Project four',
+    summary: 'Short description of what this project was about.',
+    year: 2023,
+  },
+  {
+    id: '5',
+    slug: 'project-five',
+    title: 'Project five',
+    summary: 'Short description of what this project was about.',
+    year: 2022,
+  },
+]
 
 export function getAllProjects() {
   return projects

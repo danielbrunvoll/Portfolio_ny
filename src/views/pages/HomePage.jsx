@@ -1,14 +1,9 @@
+import ProjectCarousel from '../components/ProjectCarousel.jsx'
 import { useHomeViewModel } from '../../viewmodels/useHomeViewModel.js'
 
 export default function HomePage() {
-  const {
-    headingLines,
-    intro,
-    portrait,
-    portraitAlt,
-    portraitPlaceholder,
-    featured,
-  } = useHomeViewModel()
+  const { headingLines, intro, portrait, portraitAlt, portraitPlaceholder } =
+    useHomeViewModel()
 
   return (
     <section className="page page-home">
@@ -33,13 +28,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {featured.length === 0 ? null : (
-        <ul className="featured">
-          {featured.map((p) => (
-            <li key={p.id}>{p.title}</li>
-          ))}
-        </ul>
-      )}
+      <ProjectCarousel />
     </section>
   )
 }
