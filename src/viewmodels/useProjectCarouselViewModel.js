@@ -1,10 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLanguage } from '../context/languageStore.js'
-import { getAllProjects, sortProjectsByYearDesc } from '../models/projects.js'
+import {
+  getAllProjects,
+  localizeProject,
+  sortProjectsByYearDesc,
+} from '../models/projects.js'
 
 export function useProjectCarouselViewModel() {
-  const { t } = useLanguage()
-  const projects = sortProjectsByYearDesc(getAllProjects())
+  const { language, t } = useLanguage()
+  const projects = sortProjectsByYearDesc(getAllProjects()).map((p) =>
+    localizeProject(p, language),
+  )
   const trackRef = useRef(null)
   const [canScrollPrev, setCanScrollPrev] = useState(false)
   const [canScrollNext, setCanScrollNext] = useState(false)
