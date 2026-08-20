@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
+import { useNotFoundViewModel } from '../../viewmodels/useNotFoundViewModel.js'
 
 export default function NotFoundPage() {
+  const { text } = useNotFoundViewModel()
+
   return (
     <section className="page">
-      <h1>Page not found</h1>
-      <Link to="/">Home</Link>
+      <h1>{text.title}</h1>
+      <Link to="/">{text.home}</Link>
     </section>
   )
 }

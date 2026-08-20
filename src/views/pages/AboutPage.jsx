@@ -1,10 +1,10 @@
-import { useAboutViewModel } from '../../viewmodels/useAboutViewModel.js'
+﻿import { useAboutViewModel } from '../../viewmodels/useAboutViewModel.js'
 
 export default function AboutPage() {
-  useAboutViewModel()
+  const { text } = useAboutViewModel()
   return (
     <section className="page">
-      <h1>About</h1>
+      <h1>{text.title}</h1>
     </section>
   )
 }

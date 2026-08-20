@@ -1,3 +1,4 @@
+﻿import { useLanguage } from '../context/languageStore.js'
 import { getProfile } from '../models/profile.js'
 import {
   getAllProjects,
@@ -5,7 +6,8 @@ import {
 } from '../models/projects.js'
 
 export function useHomeViewModel() {
-  const { name, role } = getProfile()
+  const { t } = useLanguage()
+  const { name } = getProfile()
   const featured = sortProjectsByYearDesc(getAllProjects()).slice(0, 3)
-  return { headingLines: [name, role], featured }
+  return { headingLines: [name, t.home.role], featured }
 }

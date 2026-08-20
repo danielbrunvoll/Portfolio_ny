@@ -1,6 +1,8 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
+import { useLanguage } from '../context/languageStore.js'
 
 export function useContactViewModel() {
+  const { t } = useLanguage()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -29,5 +31,6 @@ export function useContactViewModel() {
     status,
     canSubmit,
     submit,
+    text: t.contact,
   }
 }

@@ -1,6 +1,6 @@
 ﻿import { useLanguage } from '../context/languageStore.js'
 
-export function useAboutViewModel() {
+export function useNotFoundViewModel() {
   const { t } = useLanguage()
-  return { text: t.about }
+  return { text: t.notFound }
 }

@@ -1,27 +1,24 @@
 /**
  * @typedef {Object} NavItem
  * @property {string} id
- * @property {string} label
  * @property {string} to
  * @property {boolean} [end]
  *
  * @typedef {Object} Profile
  * @property {string} name
- * @property {string} role
  */
 
 /** @type {Profile} */
 const profile = {
   name: 'Daniel Brunvoll',
-  role: 'UX Designer',
 }
 
 /** @type {NavItem[]} */
 const navItems = [
-  { id: 'home', label: 'Home', to: '/', end: true },
-  { id: 'projects', label: 'Projects', to: '/projects' },
-  { id: 'about', label: 'About me', to: '/about' },
-  { id: 'contact', label: 'Contact', to: '/contact' },
+  { id: 'home', to: '/', end: true },
+  { id: 'projects', to: '/projects' },
+  { id: 'about', to: '/about' },
+  { id: 'contact', to: '/contact' },
 ]
 
 export function getProfile() {

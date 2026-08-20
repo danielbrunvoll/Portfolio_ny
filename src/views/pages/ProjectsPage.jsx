@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { useProjectsViewModel } from '../../viewmodels/useProjectsViewModel.js'
 
 export default function ProjectsPage() {
-  const { visibleProjects } = useProjectsViewModel()
+  const { visibleProjects, text } = useProjectsViewModel()
 
   return (
     <section className="page">
-      <h1>Projects</h1>
+      <h1>{text.title}</h1>
 
       {visibleProjects.length === 0 ? (
-        <p>No projects yet.</p>
+        <p>{text.empty}</p>
       ) : (
         <ul className="project-grid">
           {visibleProjects.map((p) => (

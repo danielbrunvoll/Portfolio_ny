@@ -1,4 +1,4 @@
-import { useHomeViewModel } from '../../viewmodels/useHomeViewModel.js'
+﻿import { useHomeViewModel } from '../../viewmodels/useHomeViewModel.js'
 
 export default function HomePage() {
   const { headingLines, featured } = useHomeViewModel()

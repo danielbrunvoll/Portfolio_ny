@@ -1,4 +1,4 @@
-import { useContactViewModel } from '../../viewmodels/useContactViewModel.js'
+﻿import { useContactViewModel } from '../../viewmodels/useContactViewModel.js'
 
 export default function ContactPage() {
   const {
@@ -11,11 +11,12 @@ export default function ContactPage() {
     status,
     canSubmit,
     submit,
+    text,
   } = useContactViewModel()
 
   return (
     <section className="page">
-      <h1>Contact</h1>
+      <h1>{text.title}</h1>
       <form
         className="contact-form"
         onSubmit={(e) => {
@@ -24,11 +25,11 @@ export default function ContactPage() {
         }}
       >
         <label>
-          Name
+          {text.name}
           <input value={name} onChange={(e) => setName(e.target.value)} />
         </label>
         <label>
-          Email
+          {text.email}
           <input
             type="email"
             value={email}
@@ -36,7 +37,7 @@ export default function ContactPage() {
           />
         </label>
         <label>
-          Message
+          {text.message}
           <textarea
             rows={5}
             value={message}
@@ -44,10 +45,10 @@ export default function ContactPage() {
           />
         </label>
         <button type="submit" disabled={!canSubmit}>
-          {status === 'sending' ? 'Sending…' : 'Send'}
+          {status === 'sending' ? text.sending : text.send}
         </button>
-        {status === 'sent' ? <p>Thanks — message received.</p> : null}
-        {status === 'error' ? <p>Something went wrong.</p> : null}
+        {status === 'sent' ? <p>{text.sent}</p> : null}
+        {status === 'error' ? <p>{text.error}</p> : null}
       </form>
     </section>
   )
