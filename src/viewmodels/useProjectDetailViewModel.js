@@ -1,5 +1,5 @@
 import { useLanguage } from '../context/languageStore.js'
-import { findProjectBySlug, localizeProject } from '../models/projects.js'
+import { findProjectBySlug, localizeProject } from '../models/projects/index.js'
 
 /** @param {string | undefined} slug */
 export function useProjectDetailViewModel(slug) {

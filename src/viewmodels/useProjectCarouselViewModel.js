@@ -4,7 +4,7 @@ import {
   getAllProjects,
   localizeProject,
   sortProjectsByYearDesc,
-} from '../models/projects.js'
+} from '../models/projects/index.js'
 
 export function useProjectCarouselViewModel() {
   const { language, t } = useLanguage()

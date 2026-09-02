@@ -4,7 +4,7 @@ import {
   getAllProjects,
   localizeProject,
   sortProjectsByYearDesc,
-} from '../models/projects.js'
+} from '../models/projects/index.js'
 
 export function useProjectsViewModel() {
   const { language, t } = useLanguage()
