@@ -252,7 +252,8 @@
 
 /* Capping the height keeps tall phone screenshots from rendering many hundreds
    of pixels high when the column is wide. */
-.project-section-media img {
+.project-section-media img,
+.project-section-media video {
   max-width: 100%;
   max-height: min(72vh, 620px);
   width: auto;
@@ -260,6 +261,25 @@
   display: block;
   margin-inline: auto;
   background: var(--accent-bg);
+}
+
+/* A `display: table` figure shrink-wraps to its content, which a video has none
+   of until it loads, so video figures get a definite width instead. */
+.project-section-media figure.media-video {
+  display: block;
+  width: min(100%, 620px);
+}
+
+.project-section-media figure.media-video figcaption {
+  display: block;
+  caption-side: unset;
+  margin-top: 10px;
+  padding-top: 0;
+}
+
+.project-section-media video {
+  width: 100%;
+  height: auto;
 }
 
 .project-section-media figcaption {

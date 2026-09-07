@@ -38,8 +38,21 @@ export default function ProjectDetailPage() {
           {section.images.length === 0 ? null : (
             <div className="project-section-media">
               {section.images.map((image) => (
-                <figure key={image.src}>
-                  <img src={image.src} alt={image.caption} loading="lazy" />
+                <figure
+                  key={image.src}
+                  className={image.type === 'video' ? 'media-video' : undefined}
+                >
+                  {image.type === 'video' ? (
+                    <video
+                      src={image.src}
+                      poster={image.poster}
+                      controls
+                      playsInline
+                      preload="metadata"
+                    />
+                  ) : (
+                    <img src={image.src} alt={image.caption} loading="lazy" />
+                  )}
                   <figcaption>{image.caption}</figcaption>
                 </figure>
               ))}

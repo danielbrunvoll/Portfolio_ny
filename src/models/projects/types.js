@@ -6,9 +6,13 @@
  * languages, which suits names that should not be translated.
  * @typedef {string | { en: string, no: string }} LocalizedText
  *
+ * A picture or a video shown alongside a section's text. `type` defaults to
+ * 'image'; set it to 'video' for an mp4, optionally with a `poster` still.
  * @typedef {Object} SectionImage
  * @property {string} src
  * @property {LocalizedText} caption
+ * @property {'image' | 'video'} [type]
+ * @property {string} [poster]
  *
  * A case study is told as a run of sections so the pictures sit next to the
  * text they illustrate, rather than all of the text followed by all of the
