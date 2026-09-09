@@ -16,7 +16,11 @@ export default function ProjectsPage() {
             <li key={p.id}>
               <Link to={`/projects/${p.slug}`}>
                 {p.cover ? (
-                  <div className="project-grid-media">
+                  <div
+                    className={`project-grid-media${
+                      p.coverFit === 'contain' ? ' media-contain' : ''
+                    }`}
+                  >
                     <img src={p.cover} alt="" loading="lazy" />
                   </div>
                 ) : null}

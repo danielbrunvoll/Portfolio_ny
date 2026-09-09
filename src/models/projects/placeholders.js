@@ -5,13 +5,6 @@
  */
 export const placeholders = [
   {
-    id: '4',
-    slug: 'project-four',
-    title: 'Project four',
-    summary: 'Short description of what this project was about.',
-    year: 2023,
-  },
-  {
     id: '5',
     slug: 'project-five',
     title: 'Project five',

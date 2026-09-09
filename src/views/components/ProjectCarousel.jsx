@@ -39,7 +39,11 @@ export default function ProjectCarousel() {
             {projects.map((project) => (
               <li key={project.id} className="carousel-card" data-carousel-card>
                 <Link to={`/projects/${project.slug}`}>
-                  <div className="carousel-card-media">
+                  <div
+                    className={`carousel-card-media${
+                      project.coverFit === 'contain' ? ' media-contain' : ''
+                    }`}
+                  >
                     {project.cover ? (
                       <img src={project.cover} alt="" />
                     ) : (

@@ -1,6 +1,7 @@
 import { portfolio } from './portfolio.js'
 import { navguard } from './navguard.js'
 import { neatheat } from './neatheat.js'
+import { ifinavet } from './ifinavet.js'
 import { placeholders } from './placeholders.js'
 
 /**
@@ -10,7 +11,7 @@ import { placeholders } from './placeholders.js'
  * projects from the same year, since the views sort by year.
  * @type {import('./types.js').Project[]}
  */
-const projects = [portfolio, navguard, neatheat, ...placeholders]
+const projects = [portfolio, navguard, neatheat, ifinavet, ...placeholders]
 
 /**
  * @param {import('./types.js').LocalizedText | undefined} value

@@ -18,6 +18,7 @@ export const neatheat = {
   },
   year: 2025,
   cover: logo,
+  coverFit: 'contain',
   sections: [
     {
       layout: 'side',

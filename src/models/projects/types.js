@@ -30,6 +30,9 @@
  * @property {LocalizedText} summary
  * @property {number} year
  * @property {string} [cover]
+ * `cover` (the default) fills the card and crops; `contain` fits the whole
+ * image inside it, which is what a wide logo needs so it is not sliced up.
+ * @property {'cover' | 'contain'} [coverFit]
  * @property {ProjectSection[]} [sections]
  * @property {{ label: string, href: string }[]} [links]
  */

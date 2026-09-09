@@ -169,6 +169,27 @@
   transform: scale(1.03);
 }
 
+/* A wide logo has to fit inside the card rather than fill and crop it. The
+   padding keeps it off the edges, and the lighter ground suits flat artwork. */
+.media-contain {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: clamp(16px, 4%, 32px);
+  box-sizing: border-box;
+}
+
+/* Compound selectors so this beats the `object-fit: cover` rules regardless of
+   where they sit in the file. */
+.carousel-card-media.media-contain img,
+.project-grid-media.media-contain img {
+  object-fit: contain;
+}
+
+.carousel-card a:hover .carousel-card-media.media-contain img,
+.project-grid a:hover .project-grid-media.media-contain img {
+  transform: none;
+}
+
 .project-grid h2 {
   margin: 0 0 4px;
   font-size: 20px;
