@@ -1,17 +1,19 @@
-import { portfolio } from './portfolio.js'
+import { ifinavet } from './ifinavet.js'
 import { navguard } from './navguard.js'
 import { neatheat } from './neatheat.js'
-import { ifinavet } from './ifinavet.js'
+import { portfolio } from './portfolio.js'
 import { placeholders } from './placeholders.js'
 
 /**
- * The project register. To add a project: create a folder for its images under
+ * The project register, in the order they appear on the site. Reorder this list
+ * to reorder the carousel and the projects page.
+ *
+ * To add a project: create a folder for its images under
  * `src/assets/projects/<slug>/`, write `src/models/projects/<slug>.js`, then
- * import it and add it to this list. Order here only breaks ties between
- * projects from the same year, since the views sort by year.
+ * import it and put it where you want it in this list.
  * @type {import('./types.js').Project[]}
  */
-const projects = [portfolio, navguard, neatheat, ifinavet, ...placeholders]
+const projects = [ifinavet, navguard, neatheat, portfolio, ...placeholders]
 
 /**
  * @param {import('./types.js').LocalizedText | undefined} value
@@ -52,8 +54,4 @@ export function getAllProjects() {
 /** @param {string} slug */
 export function findProjectBySlug(slug) {
   return projects.find((p) => p.slug === slug) ?? null
-}
-
-export function sortProjectsByYearDesc(list) {
-  return [...list].sort((a, b) => b.year - a.year)
 }
